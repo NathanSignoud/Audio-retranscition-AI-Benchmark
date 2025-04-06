@@ -5,7 +5,7 @@ Ce projet a pour objectif de comparer plusieurs systèmes de reconnaissance voca
 
 ---
 
-## 📊 Objectifs
+## Objectifs
 
 - Comparer les performances de **Whisper**, **Vosk**, et **Wav2Vec2**
 - Utiliser des fichiers audio normalisés et des transcriptions humaines de référence
@@ -14,19 +14,25 @@ Ce projet a pour objectif de comparer plusieurs systèmes de reconnaissance voca
 
 ---
 
-## 🎓 Prérequis
+## Prérequis
 
 - Python 3.9+
 - ffmpeg (installé et accessible via le PATH)
 - Environnement virtuel recommandé
 
 ```bash
+
 pip install -r requirements.txt
+pip install rouge_score
+pip install bert_score
+pip install hf_xet
+cd src/
+
 ```
 
 ---
 
-## 📂 Structure du projet
+## Structure du projet
 
 ```bash
 speech_benchmark/
@@ -47,26 +53,26 @@ speech_benchmark/
 
 ---
 
-## 🚀 Utilisation
+## Utilisation
 
 ### 1. Convertir les fichiers audio (si besoin)
 ```bash
-python src/convert_audio.py
+python convert_audio.py
 ```
 
 ### 2. Lancer le benchmark complet
 ```bash
-python src/build_all.py
+python pipeline.py
 ```
 
 ### 3. Lancer l'application web
 ```bash
-streamlit run src/app.py
+streamlit run app.py
 ```
 
 ---
 
-## 🔢 Métriques calculées
+## Métriques calculées
 
 | Métrique           | Description                                        |
 |--------------------|----------------------------------------------------|
@@ -79,6 +85,6 @@ streamlit run src/app.py
 
 ---
 
-## 📅 Auteur
-
+## Auteur
+Nathan Signoud
 Projet réalisé dans le cadre d'un benchmark IA vocal pour la transcription du français parlé par des locuteurs sénégalais. Réalisé avec Python, Streamlit, HuggingFace, Vosk et Whisper.
